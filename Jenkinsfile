@@ -4,17 +4,17 @@ pipeline {
     environment {
         AZURE_CREDENTIALS_ID = 'azure-service-principal' // Must be configured in Jenkins credentials
         ACR_NAME = "acraryan01"
-        ACR_LOGIN_SERVER = "acraryan01.azurecr.io"
-        IMAGE_NAME = "mywebapiaryan"
+        ACR_LOGIN_SERVER = "acratul0110.azurecr.io"
+        IMAGE_NAME = "mywebapiatul"
         TAG = "v1"
         RESOURCE_GROUP = "my-rg"
-        AKS_CLUSTER_NAME = "aksaryan01"
+        AKS_CLUSTER_NAME = "aksatul0110"
     }
 
     stages {
         stage('Checkout') {
     steps {
-        git branch: 'main', url: 'https://github.com/aryanjindal724/DotNet-Aks-Acr-JenkinsPipeline.git'
+        git branch: 'main', url: 'https://github.com/atulb01/JenkinsDockerGit.git'
     }
 }
 
@@ -38,7 +38,7 @@ pipeline {
 
         stage('Terraform Init & Apply') {
             steps {
-                dir('Terraform_module') {
+                dir('Terraform') {
                     bat 'terraform init'
                     bat 'terraform apply -auto-approve'
                 }
@@ -65,7 +65,7 @@ pipeline {
 
         stage('Deploy to AKS') {
             steps {
-                bat 'kubectl apply -f deployment.yml'
+                bat 'kubectl apply -f deployment.yaml'
                 
             }
         }
