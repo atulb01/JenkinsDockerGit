@@ -1,6 +1,6 @@
 provider "azurerm" {
   features {}
-  subscription_id = "ffb20f85-a6a5-4637-a47b-3125b82cd858"
+  subscription_id = "fa23df80-990d-4e5f-bf9b-1b3ae6e405a1"
 }
 
 resource "azurerm_resource_group" "main" {
@@ -9,7 +9,7 @@ resource "azurerm_resource_group" "main" {
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                = "acraryan01"
+  name                = "acratul0110"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
   sku                 = "Basic"
@@ -17,7 +17,7 @@ resource "azurerm_container_registry" "acr" {
 }
 
 resource "azurerm_kubernetes_cluster" "aks" {
-  name                = "aksaryan01"
+  name                = "aksatul0110"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   dns_prefix          = "dotnetaks"
