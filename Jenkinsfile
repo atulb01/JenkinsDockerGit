@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AZURE_CREDENTIALS_ID = 'azure-service-principal' // Must be configured in Jenkins credentials
-        ACR_NAME = "acraryan01"
+        ACR_NAME = "acratul0110"
         ACR_LOGIN_SERVER = "acratul0110.azurecr.io"
         IMAGE_NAME = "mywebapiatul"
         TAG = "v1"
